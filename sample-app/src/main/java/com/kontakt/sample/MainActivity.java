@@ -13,14 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.kontakt.sample.samples.BackgroundScanActivity;
-import com.kontakt.sample.samples.BeaconConfigurationActivity;
-import com.kontakt.sample.samples.BeaconEddystoneScanActivity;
-import com.kontakt.sample.samples.BeaconProScanActivity;
-import com.kontakt.sample.samples.BeaconProSensorsActivity;
-import com.kontakt.sample.samples.ForegroundScanActivity;
-import com.kontakt.sample.samples.KontaktCloudActivity;
-import com.kontakt.sample.samples.ScanFiltersActivity;
-import com.kontakt.sample.samples.ScanRegionsActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
