@@ -69,32 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   @Override
   public void onClick(View view) {
     switch (view.getId()) {
-      case R.id.button_scan_beacons:
-        startActivity(BeaconEddystoneScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_beacons_pro:
-        startActivity(BeaconProScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_filters:
-        startActivity(ScanFiltersActivity.createIntent(this));
-        break;
-      case R.id.button_scan_regions:
-        startActivity(ScanRegionsActivity.createIntent(this));
-        break;
       case R.id.button_scan_background:
         startActivity(BackgroundScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_foreground:
-        startActivity(ForegroundScanActivity.createIntent(this));
-        break;
-      case R.id.button_beacon_config:
-        startActivity(BeaconConfigurationActivity.createIntent(this));
-        break;
-      case R.id.button_beacon_pro_sensors:
-        startActivity(BeaconProSensorsActivity.createIntent(this));
-        break;
-      case R.id.button_kontakt_cloud:
-        startActivity(KontaktCloudActivity.createIntent(this));
         break;
     }
   }
