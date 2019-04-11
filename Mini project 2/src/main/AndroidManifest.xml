@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dk.sdu.mmmi.ubicomp">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+  <application
+      android:name="dk.sdu.mmmi.ubicomp.App"
+      android:allowBackup="true"
+      android:label="@string/app_name"
+      android:theme="@style/AppTheme">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBZGvUV2TBKDuWs0OL4OveQ2qrLPvOP-Y8"/>
+    <!-- Activities -->
+
+    <activity
+        android:name="dk.sdu.mmmi.ubicomp.MainActivity"
+        android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:name="dk.sdu.mmmi.ubicomp.LocationActivity"
+        android:screenOrientation="portrait"/>
+
+    <!-- Services -->
+
+    <service
+        android:name="com.kontakt.sdk.android.ble.service.ProximityService"
+        android:exported="false"/>
+    <service
+        android:name="dk.sdu.mmmi.ubicomp.service.BackgroundScanService"
+        android:enabled="true"
+        android:exported="false"/>
+
+  </application>
+
+</manifest>

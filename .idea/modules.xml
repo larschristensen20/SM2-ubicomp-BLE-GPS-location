@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mini project 2/Mini project 2.iml" filepath="$PROJECT_DIR$/Mini project 2/Mini project 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/SM2-ubicomp-BLE-GPS-location.iml" filepath="$PROJECT_DIR$/SM2-ubicomp-BLE-GPS-location.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample-app/sample-app.iml" filepath="$PROJECT_DIR$/sample-app/sample-app.iml" />
     </modules>
   </component>
 </project>
