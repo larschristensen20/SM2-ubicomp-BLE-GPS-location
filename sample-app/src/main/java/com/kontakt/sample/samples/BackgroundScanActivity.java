@@ -47,6 +47,7 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     mapView.getMapAsync(this);
     //Setup Toolbar
     setupToolbar();
+    startBackgroundService();
 
   }
   @SuppressLint("MissingPermission")
@@ -116,7 +117,7 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
       int devicesCount = intent.getIntExtra(BackgroundScanService.EXTRA_DEVICES_COUNT, 0);
       RemoteBluetoothDevice device = intent.getParcelableExtra(BackgroundScanService.EXTRA_DEVICE);
       RemoteBluetoothDevice device2 = intent.getParcelableExtra(BackgroundScanService.EXTRA_DEVICE);
-      statusText.append(String.format("\n c: %d  d: %s n: %s", devicesCount, device.getDistance(), device.getUniqueId()));
+      statusText.setText(String.format("\n c: %d  d: %s n: %s", devicesCount, device.getDistance(), device.getUniqueId()));
     }
   };
 }

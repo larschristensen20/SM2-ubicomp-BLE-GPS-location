@@ -14,8 +14,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal"
       android:layout_marginTop="16dp"
-      android:gravity="center"
-      android:text="Hi2" />
+      android:gravity="center" />
 
   <com.google.android.gms.maps.MapView
       android:id="@+id/mapView"

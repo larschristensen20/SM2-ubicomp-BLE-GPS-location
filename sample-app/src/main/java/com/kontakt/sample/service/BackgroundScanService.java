@@ -87,7 +87,7 @@ public class BackgroundScanService extends Service {
         Toast.makeText(BackgroundScanService.this, "Scanning service started.", Toast.LENGTH_SHORT).show();
       }
     });
-    stopAfterDelay();
+    //stopAfterDelay();
   }
 
   private void stopAfterDelay() {
