@@ -1,11 +1,13 @@
 package com.kontakt.sample.samples;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -17,16 +19,18 @@ import android.widget.Toast;
 import com.kontakt.sample.R;
 import com.kontakt.sample.service.BackgroundScanService;
 import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
-
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
 /**
  * This is an example of implementing a background scan using Android's Service component.
  */
-public class BackgroundScanActivity extends AppCompatActivity implements View.OnClickListener {
+public class BackgroundScanActivity extends AppCompatActivity implements View.OnClickListener, OnMapReadyCallback {
 
   public static Intent createIntent(@NonNull Context context) {
     return new Intent(context, BackgroundScanActivity.class);
   }
-
+  private GoogleMap mMap;
+  private MapView mapView;
   private Intent serviceIntent;
   private TextView statusText;
 
@@ -37,11 +41,20 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     statusText = (TextView) findViewById(R.id.status_text);
     serviceIntent = new Intent(getApplicationContext(), BackgroundScanService.class);
 
+    mapView = this.findViewById(R.id.mapView);
+    mapView.onCreate(null);
+    mapView.onResume();
+    mapView.getMapAsync(this);
     //Setup Toolbar
     setupToolbar();
 
-    //Setup buttons
-    setupButtons();
+  }
+  @SuppressLint("MissingPermission")
+  @Override
+  public void onMapReady(GoogleMap googleMap) {
+    mMap = googleMap;
+    mMap.getUiSettings().setMyLocationButtonEnabled(true);
+    mMap.setMyLocationEnabled(true);
   }
 
   @Override
@@ -63,13 +76,6 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     if (supportActionBar != null) {
       supportActionBar.setDisplayHomeAsUpEnabled(true);
     }
-  }
-
-  private void setupButtons() {
-    Button startScanButton = (Button) findViewById(R.id.start_scan_button);
-    Button stopScanButton = (Button) findViewById(R.id.stop_scan_button);
-    startScanButton.setOnClickListener(this);
-    stopScanButton.setOnClickListener(this);
   }
 
   private void startBackgroundService() {
