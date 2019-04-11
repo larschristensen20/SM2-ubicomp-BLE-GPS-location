@@ -40,25 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private void setupButtons() {
     buttonsLayout = findViewById(R.id.buttons_layout);
 
-  /*  final Button beaconsScanningButton = findViewById(R.id.button_scan_beacons);
-    final Button beaconsProScanningButton = findViewById(R.id.button_scan_beacons_pro);
-    final Button scanRegionsButton = findViewById(R.id.button_scan_regions);
-    final Button scanFiltersButton = findViewById(R.id.button_scan_filters);*/
     final Button backgroundScanButton = findViewById(R.id.button_scan_background);
-/*    final Button foregroundScanButton = findViewById(R.id.button_scan_foreground);
-    final Button configurationButton = findViewById(R.id.button_beacon_config);
-    final Button beaconProSensorsButton = findViewById(R.id.button_beacon_pro_sensors);
-    final Button kontaktCloudButton = findViewById(R.id.button_kontakt_cloud);*/
 
-    /*beaconsScanningButton.setOnClickListener(this);
-    beaconsProScanningButton.setOnClickListener(this);
-    scanRegionsButton.setOnClickListener(this);
-    scanFiltersButton.setOnClickListener(this);*/
     backgroundScanButton.setOnClickListener(this);
-   /* foregroundScanButton.setOnClickListener(this);
-    configurationButton.setOnClickListener(this);
-    beaconProSensorsButton.setOnClickListener(this);
-    kontaktCloudButton.setOnClickListener(this);*/
   }
 
   //Since Android Marshmallow starting a Bluetooth Low Energy scan requires permission from location group.
@@ -85,32 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   @Override
   public void onClick(View view) {
     switch (view.getId()) {
-      case R.id.button_scan_beacons:
-        startActivity(BeaconEddystoneScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_beacons_pro:
-        startActivity(BeaconProScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_filters:
-        startActivity(ScanFiltersActivity.createIntent(this));
-        break;
-      case R.id.button_scan_regions:
-        startActivity(ScanRegionsActivity.createIntent(this));
-        break;
       case R.id.button_scan_background:
         startActivity(BackgroundScanActivity.createIntent(this));
-        break;
-      case R.id.button_scan_foreground:
-        startActivity(ForegroundScanActivity.createIntent(this));
-        break;
-      case R.id.button_beacon_config:
-        startActivity(BeaconConfigurationActivity.createIntent(this));
-        break;
-      case R.id.button_beacon_pro_sensors:
-        startActivity(BeaconProSensorsActivity.createIntent(this));
-        break;
-      case R.id.button_kontakt_cloud:
-        startActivity(KontaktCloudActivity.createIntent(this));
         break;
     }
   }
