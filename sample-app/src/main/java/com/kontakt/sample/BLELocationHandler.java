@@ -34,21 +34,17 @@ public class BLELocationHandler {
         return json;
     }
 
-    public Map<String, String> getBLEInfo(String alias) {
+    public BLEDevice getBLEInfo(String alias) {
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray beaconsArray = obj.getJSONArray("beacons");
-            HashMap<String, String> beaconsMap;
-
+            BLEDevice device;
             for (int i = 0; i < beaconsArray.length(); i++) {
                 JSONObject beacon = beaconsArray.getJSONObject(i);
                 String alias_value = beacon.getString("alias");
                 if (alias.equals(alias_value)) {
-                    beaconsMap = new HashMap<>();
-
-                    beaconsMap.put("roomNameValue", beacon.getString("roomName"));
-                    beaconsMap.put("levelValue", beacon.getString("level"));
-                    return beaconsMap;
+                    device = new BLEDevice(alias, beacon.getString("roomName"), beacon.getString("level"));
+                    return device;
                 }
             }
         } catch (JSONException e) {

@@ -16,11 +16,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kontakt.sample.BLEDevice;
+import com.kontakt.sample.BLELocationHandler;
 import com.kontakt.sample.R;
 import com.kontakt.sample.service.BackgroundScanService;
 import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
+
+import java.util.TreeSet;
+
 /**
  * This is an example of implementing a background scan using Android's Service component.
  */
@@ -33,6 +38,8 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
   private MapView mapView;
   private Intent serviceIntent;
   private TextView statusText;
+  private TreeSet<BLEDevice> deviceList;
+  private BLELocationHandler locationHandler;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,8 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     setContentView(R.layout.activity_background_scan);
     statusText = (TextView) findViewById(R.id.status_text);
     serviceIntent = new Intent(getApplicationContext(), BackgroundScanService.class);
+
+    deviceList = new TreeSet<>();
 
     mapView = this.findViewById(R.id.mapView);
     mapView.onCreate(null);
@@ -49,6 +58,7 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     setupToolbar();
     startBackgroundService();
 
+    locationHandler = new BLELocationHandler(this);
   }
   @SuppressLint("MissingPermission")
   @Override
@@ -64,11 +74,13 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     //Register Broadcast receiver that will accept results from background scanning
     IntentFilter intentFilter = new IntentFilter(BackgroundScanService.ACTION_DEVICE_DISCOVERED);
     registerReceiver(scanningBroadcastReceiver, intentFilter);
+    startBackgroundService();
   }
 
   @Override
   protected void onPause() {
     unregisterReceiver(scanningBroadcastReceiver);
+    stopBackgroundService();
     super.onPause();
   }
 
@@ -104,6 +116,7 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
     switch (item.getItemId()) {
       case android.R.id.home:
         onBackPressed();
+        stopBackgroundService();
         return true;
       default:
         return super.onOptionsItemSelected(item);
@@ -116,8 +129,13 @@ public class BackgroundScanActivity extends AppCompatActivity implements View.On
       //Device discovered!
       int devicesCount = intent.getIntExtra(BackgroundScanService.EXTRA_DEVICES_COUNT, 0);
       RemoteBluetoothDevice device = intent.getParcelableExtra(BackgroundScanService.EXTRA_DEVICE);
-      RemoteBluetoothDevice device2 = intent.getParcelableExtra(BackgroundScanService.EXTRA_DEVICE);
-      statusText.setText(String.format("\n c: %d  d: %s n: %s", devicesCount, device.getDistance(), device.getUniqueId()));
+      BLEDevice bleDevice = locationHandler.getBLEInfo(device.getUniqueId());
+      bleDevice.setDiscovered(device.getTimestamp());
+      bleDevice.setSignalStrength(device.getRssi());
+
+      deviceList.add(bleDevice);
+
+      statusText.setText(String.format("\n You are in: %s", bleDevice.getAlias()));
     }
   };
 }

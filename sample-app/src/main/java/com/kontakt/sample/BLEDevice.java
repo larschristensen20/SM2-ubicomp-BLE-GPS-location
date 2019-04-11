@@ -47,7 +47,15 @@ public class BLEDevice implements Comparable<BLEDevice> {
     @Override
     public int compareTo(@NonNull BLEDevice o) {
         int otherStrength = o.getSignalStrength();
-        return this.getSignalStrength() - otherStrength;
+        return otherStrength - this.getSignalStrength();
     }
 
+    @Override
+    public String toString() {
+        return "BLEDevice{" +
+                "alias='" + alias + '\'' +
+                ", roomName='" + roomName + '\'' +
+                ", signalStrength=" + signalStrength +
+                '}';
+    }
 }
