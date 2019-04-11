@@ -10,17 +10,11 @@ public class BLEDevice implements Comparable<BLEDevice> {
     private int signalStrength;
     private long discovered;
 
-    public BLEDevice(String alias, String roomName, String level) {
+    public BLEDevice(String alias, String roomName, String level, int signalStrength, long discovered) {
         this.alias = alias;
         this.roomName = roomName;
         this.level = level;
-    }
-
-    public void setSignalStrength(int signalStrength) {
         this.signalStrength = signalStrength;
-    }
-
-    public void setDiscovered(long discovered) {
         this.discovered = discovered;
     }
 

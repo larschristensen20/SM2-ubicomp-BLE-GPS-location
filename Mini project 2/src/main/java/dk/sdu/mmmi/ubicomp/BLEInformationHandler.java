@@ -2,6 +2,8 @@ package dk.sdu.mmmi.ubicomp;
 
 import android.content.Context;
 
+import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,17 +34,17 @@ public class BLEInformationHandler {
         return json;
     }
 
-    public BLEDevice getBLEInfo(String alias) {
+    public BLEDevice getBLEInfo(RemoteBluetoothDevice device) {
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray beaconsArray = obj.getJSONArray("beacons");
-            BLEDevice device;
+            BLEDevice bleDevice;
             for (int i = 0; i < beaconsArray.length(); i++) {
                 JSONObject beacon = beaconsArray.getJSONObject(i);
                 String alias_value = beacon.getString("alias");
-                if (alias.equals(alias_value)) {
-                    device = new BLEDevice(alias, beacon.getString("roomName"), beacon.getString("level"));
-                    return device;
+                if (device.getUniqueId().equals(alias_value)) {
+                    bleDevice = new BLEDevice(alias_value, beacon.getString("roomName"), beacon.getString("level"), device.getRssi(), device.getTimestamp());
+                    return bleDevice;
                 }
             }
         } catch (JSONException e) {
