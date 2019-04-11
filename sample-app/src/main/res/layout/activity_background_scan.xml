@@ -10,37 +10,6 @@
     >
 
   <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="@string/background_scan_description"
-      />
-
-  <Button
-      android:id="@+id/start_scan_button"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:text="@string/start_scanning_service"
-      />
-
-  <Button
-      android:id="@+id/stop_scan_button"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/stop_scanning_service"
-      />
-
-  <ProgressBar
-      android:id="@+id/scanning_progress"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:layout_marginTop="16dp"
-      android:visibility="gone"
-      />
-
-  <TextView
       android:id="@+id/status_text"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -49,5 +18,10 @@
       android:gravity="center"
       tools:text="Devices discovered: 0"
       />
+
+  <com.google.android.gms.maps.MapView
+      android:id="@+id/mapView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
 
 </LinearLayout>
