@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -128,7 +129,12 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         bleListScanner.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                manageDeviceList();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        manageDeviceList();
+                    }
+                });
             }
 
         }, 0, 30000);
