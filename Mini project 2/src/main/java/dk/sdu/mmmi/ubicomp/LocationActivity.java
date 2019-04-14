@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -54,12 +52,9 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         mapView.onCreate(null);
         mapView.onResume();
         mapView.getMapAsync(this);
-
-        startBackgroundService();
-
         locationHandler = new BLEInformationHandler(this);
 
-        startBLEListScanner();
+        startBackgroundServices();
     }
 
     @SuppressLint("MissingPermission")
@@ -76,22 +71,24 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         //Register Broadcast receiver that will accept results from background scanning
         IntentFilter intentFilter = new IntentFilter(BackgroundScanService.ACTION_DEVICE_DISCOVERED);
         registerReceiver(scanningBroadcastReceiver, intentFilter);
-        startBackgroundService();
+        startBackgroundServices();
     }
 
     @Override
     protected void onPause() {
         unregisterReceiver(scanningBroadcastReceiver);
-        stopBackgroundService();
+        stopBackgroundServices();
         super.onPause();
     }
 
-    private void startBackgroundService() {
+    private void startBackgroundServices() {
         startService(serviceIntent);
+        startBLEListScanner();
     }
 
-    private void stopBackgroundService() {
+    private void stopBackgroundServices() {
         stopService(serviceIntent);
+        stopBLEListScanner();
     }
 
 
