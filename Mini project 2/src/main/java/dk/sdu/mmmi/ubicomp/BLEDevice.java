@@ -9,13 +9,17 @@ public class BLEDevice implements Comparable<BLEDevice> {
     private String level;
     private int signalStrength;
     private long discovered;
+    private double lat;
+    private double lon;
 
-    public BLEDevice(String alias, String roomName, String level, int signalStrength, long discovered) {
+    public BLEDevice(String alias, String roomName, String level, int signalStrength, long discovered, double lat, double lon) {
         this.alias = alias;
         this.roomName = roomName;
         this.level = level;
         this.signalStrength = signalStrength;
         this.discovered = discovered;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     public String getAlias() {
@@ -37,6 +41,10 @@ public class BLEDevice implements Comparable<BLEDevice> {
     public int getSignalStrength() {
         return signalStrength;
     }
+
+    public double getLat() { return lat; }
+
+    public double getLon() { return lon; }
 
     @Override
     public int compareTo(@NonNull BLEDevice o) {

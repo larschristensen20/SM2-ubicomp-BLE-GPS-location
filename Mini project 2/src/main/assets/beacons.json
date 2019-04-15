@@ -8,7 +8,9 @@
       "instanceId":"725972556c53",
       "room": "Ø21-600b-00",
       "level": "-1 (Kaelder)",
-      "roomName": "Atrie"
+      "roomName": "Atrie",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias": "5f4E",
@@ -18,7 +20,9 @@
       "instanceId":"74506170746d",
       "room": "Ø20-604-0",
       "level": "0 (Parterre)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"69Rq",
@@ -28,7 +32,9 @@
       "instanceId":"6361434d7a49",
       "room": "Ø20-603-0",
       "level": "0 (Parterre)",
-      "roomName": "U168"
+      "roomName": "U168",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"27wH",
@@ -38,7 +44,9 @@
       "instanceId":"736c3056676a",
       "room": "Ø20-601b-0",
       "level": "0 (Parterre)",
-      "roomName": "U167"
+      "roomName": "U167",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"iqvD",
@@ -48,7 +56,9 @@
       "instanceId":"63795930314f",
       "room": "Ø20-600b-0",
       "level": "0 (Parterre)",
-      "roomName": "Gang"
+      "roomName": "Gang",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"QP9Y",
@@ -58,7 +68,9 @@
       "instanceId":"753848687567",
       "room": "Ø20-511-0",
       "level": "0 (Parterre)",
-      "roomName": "U166"
+      "roomName": "U166",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"S5XN",
@@ -68,7 +80,9 @@
       "instanceId":"6472586c414f",
       "room": "Ø20-510a-0",
       "level": "0 (Parterre)",
-      "roomName": "U165"
+      "roomName": "U165",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"3rMl",
@@ -78,7 +92,9 @@
       "instanceId":"383554396c34",
       "room": "Ø20-508a-0",
       "level": "0 (Parterre)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"gkKV",
@@ -88,7 +104,9 @@
       "instanceId":"41707a67524b",
       "room": "Ø22-604-0",
       "level": "0 (Parterre)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"KdtM",
@@ -98,7 +116,9 @@
       "instanceId":"62537235324a",
       "room": "Ø22-603-0",
       "level": "0 (Parterre)",
-      "roomName": "U164"
+      "roomName": "U164",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"krQd",
@@ -108,7 +128,9 @@
       "instanceId":"6d334f476c4e",
       "room": "Ø22-601b-0",
       "level": "0 (Parterre)",
-      "roomName": "U163"
+      "roomName": "U163",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"1XIJ",
@@ -118,7 +140,9 @@
       "instanceId":"6b6d485a3262",
       "room": "Ø22-600b-0",
       "level": "0 (Parterre)",
-      "roomName": "Gang"
+      "roomName": "Gang",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"LxPa",
@@ -128,7 +152,9 @@
       "instanceId":"784133754a42",
       "room": "Ø22-512a-0",
       "level": "0 (Parterre)",
-      "roomName": "U162"
+      "roomName": "U162",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"Y2bm",
@@ -138,7 +164,9 @@
       "instanceId":"42556c577535",
       "room": "Ø22-511-0",
       "level": "0 (Parterre)",
-      "roomName": "U161"
+      "roomName": "U161",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"h6YJ",
@@ -148,7 +176,9 @@
       "instanceId":"6f365048624e",
       "room": "Ø22-510-0",
       "level": "0 (Parterre)",
-      "roomName": "U160"
+      "roomName": "U160",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"F29K",
@@ -158,7 +188,9 @@
       "instanceId":"624c67775232",
       "room": "Ø22-508-0",
       "level": "0 (Parterre)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"z5gv",
@@ -168,7 +200,9 @@
       "instanceId":"763872316a55",
       "room": "Ø22-507-0",
       "level": "0 (Parterre)",
-      "roomName": "Trappe"
+      "roomName": "Trappe",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"Ras3",
@@ -178,7 +212,9 @@
       "instanceId":"4b4d5a346551",
       "room": "Ø21-600b-0",
       "level": "0 (Parterre)",
-      "roomName": "Atrie"
+      "roomName": "Atrie",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"Vkrs",
@@ -188,7 +224,9 @@
       "instanceId":"4c3537374c4f",
       "room": "Ø20-606-0",
       "level": "0 (Parterre)",
-      "roomName": "Trappe"
+      "roomName": "Trappe",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"RPpW",
@@ -198,7 +236,9 @@
       "instanceId":"41346c4b6f74",
       "room": "Ø21-602-0",
       "level": "0 (Parterre)",
-      "roomName": "Gang"
+      "roomName": "Gang",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"3UUi",
@@ -208,7 +248,9 @@
       "instanceId":"6c396364396f",
       "room": "Ø21-511-0",
       "level": "0 (Parterre)",
-      "roomName": "Gang"
+      "roomName": "Gang",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"rSfe",
@@ -218,7 +260,9 @@
       "instanceId":"634f4e586e6a",
       "room": "Ø22-508-1",
       "level": "1 (Stuen)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"koHK",
@@ -228,7 +272,9 @@
       "instanceId":"465044327862",
       "room": "Ø22-510-1",
       "level": "1 (Stuen)",
-      "roomName": "U171"
+      "roomName": "U171",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"CffO",
@@ -238,7 +284,9 @@
       "instanceId":"4e6756495a76",
       "room": "Ø22-511-1",
       "level": "1 (Stuen)",
-      "roomName": "U170"
+      "roomName": "U170",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"NEcd",
@@ -248,7 +296,9 @@
       "instanceId":"4c65786a7970",
       "room": "Ø22-601b-1",
       "level": "1 (Stuen)",
-      "roomName": "U177"
+      "roomName": "U177",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"dHSx",
@@ -258,7 +308,9 @@
       "instanceId":"37556f337330",
       "room": "Ø22-603-1",
       "level": "1 (Stuen)",
-      "roomName": "U176"
+      "roomName": "U176",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"n1hZ",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -267,7 +319,9 @@
       "instanceId":"56415236384d",
       "room": "Ø22-604-1",
       "level": "1 (Stuen)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"0bNm",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -276,7 +330,9 @@
       "instanceId":"38566a625350",
       "room": "Ø20-508a-1",
       "level": "1 (Stuen)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"GZGz",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -285,7 +341,9 @@
       "instanceId":"766c4335614e",
       "room": "Ø20-510-1",
       "level": "1 (Stuen)",
-      "roomName": "U172"
+      "roomName": "U172",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"76bB",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -294,7 +352,9 @@
       "instanceId":"577870305979",
       "room": "Ø20-511-1",
       "level": "1 (Stuen)",
-      "roomName": "U173"
+      "roomName": "U173",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"1AGP",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -303,7 +363,9 @@
       "instanceId":"534a68675569",
       "room": "Ø20-601b-1",
       "level": "1 (Stuen)",
-      "roomName": "U174"
+      "roomName": "U174",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"RN94",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -312,7 +374,9 @@
       "instanceId":"6a6f57377938",
       "room": "Ø20-603-1",
       "level": "1 (Stuen)",
-      "roomName": "U175"
+      "roomName": "U175",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"6qXL",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -321,7 +385,9 @@
       "instanceId":"31493971544a",
       "room": "Ø20-604b-1",
       "level": "1 (Stuen)",
-      "roomName": "Studiezone"
+      "roomName": "Studiezone",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"m6ZW",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -330,7 +396,9 @@
       "instanceId":"596b7a546950",
       "room": "Ø21-600c-1",
       "level": "1 (Stuen)",
-      "roomName": "Trappe"
+      "roomName": "Trappe",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"Eh6f",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -339,7 +407,9 @@
       "instanceId":"5a3549557579",
       "room": "Ø21-600b-1",
       "level": "1 (Stuen)",
-      "roomName": "Atrie"
+      "roomName": "Atrie",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"23ip",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -348,7 +418,9 @@
       "instanceId":"4d5959587774",
       "room": "Ø20-600b-1",
       "level": "1 (Stuen)",
-      "roomName": "Gang"
+      "roomName": "Gang",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"oPSB",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -357,7 +429,9 @@
       "instanceId":"5535654e5856",
       "room": "Ø20-601b-2",
       "level": "2 (1.sal)",
-      "roomName": "U182"
+      "roomName": "U182",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"bR6t",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -366,7 +440,9 @@
       "instanceId":"346d72794765",
       "room": "Ø20-511-2",
       "level": "2 (1.sal)",
-      "roomName": "U183"
+      "roomName": "U183",
+      "lat": 55.367335,
+      "lon": 10.430790
     },{
       "alias":"FNWl",
       "UUID": "f7826da6-4fa2-4e98-8024-bc5b71e0893e",
@@ -375,7 +451,9 @@
       "instanceId":"53366a556344",
       "room": "Ø21-600b-2",
       "level": "2 (1.sal)",
-      "roomName": "Atrie"
+      "roomName": "Atrie",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"zhSV",
@@ -385,7 +463,9 @@
       "instanceId":"6a6536457446",
       "room": "Ø22-601b-2",
       "level": "2 (1.sal)",
-      "roomName": "U181"
+      "roomName": "U181",
+      "lat": 55.367335,
+      "lon": 10.430790
     },
     {
       "alias":"64AZ",
@@ -395,7 +475,9 @@
       "instanceId":"787444644336",
       "room": "Ø22-511-2",
       "level": "2 (1.sal)",
-      "roomName": "U180"
+      "roomName": "U180",
+      "lat": 55.367335,
+      "lon": 10.430790
     }
   ]
 }

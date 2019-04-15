@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
 
 import java.util.Timer;
@@ -37,6 +40,8 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     private TreeSet<BLEDevice> deviceList;
     private BLEInformationHandler locationHandler;
     private Timer bleListScanner;
+    private Marker marker = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
         deviceList = new TreeSet<>();
         bleListScanner = new Timer();
+
 
         mapView = this.findViewById(R.id.mapView);
         mapView.onCreate(null);
@@ -96,15 +102,15 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         @Override
         public void onReceive(Context context, Intent intent) {
             //Device discovered!
-            int devicesCount = intent.getIntExtra(BackgroundScanService.EXTRA_DEVICES_COUNT, 0);
             RemoteBluetoothDevice device = intent.getParcelableExtra(BackgroundScanService.EXTRA_DEVICE);
             BLEDevice bleDevice = locationHandler.getBLEInfo(device);
 
             deviceList.add(bleDevice);
             manageDeviceList();
 
-            //statusText.setText(String.format("\n You are in: %s", bleDevice.getAlias()));
-            statusText.setText(String.format("\n You are in: %s", deviceList.first()));
+            String info = String.format("\n You are in: %s on floor %s", deviceList.first().getRoomName(), deviceList.first().getLevel());
+            disableGPSLocationAndPlaceMarker(new LatLng(deviceList.first().getLat(), deviceList.first().getLon()), info);
+            statusText.setText(info);
         }
     };
 
@@ -119,6 +125,23 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
         if (deviceList.isEmpty()) {
             statusText.setText("No BLE's found");
+            enableGPSLocation();
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private void disableGPSLocationAndPlaceMarker(LatLng position, String title) {
+        mMap.setMyLocationEnabled(false);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
+        marker = mMap.addMarker(new MarkerOptions().position(position).title(title));
+    }
+
+    @SuppressLint("MissingPermission")
+    private void enableGPSLocation() {
+        mMap.setMyLocationEnabled(true);
+        if(marker != null) {
+            marker.remove();
         }
     }
 
@@ -140,4 +163,5 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     private void stopBLEListScanner() {
         bleListScanner.cancel();
     }
+
 }

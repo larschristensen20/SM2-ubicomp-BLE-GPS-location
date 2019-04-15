@@ -42,8 +42,10 @@ public class BLEInformationHandler {
             for (int i = 0; i < beaconsArray.length(); i++) {
                 JSONObject beacon = beaconsArray.getJSONObject(i);
                 String alias_value = beacon.getString("alias");
+                double latValue = beacon.getDouble("lat");
+                double lonValue = beacon.getDouble("lon");
                 if (device.getUniqueId().equals(alias_value)) {
-                    bleDevice = new BLEDevice(alias_value, beacon.getString("roomName"), beacon.getString("level"), device.getRssi(), device.getTimestamp());
+                    bleDevice = new BLEDevice(alias_value, beacon.getString("roomName"), beacon.getString("level"), device.getRssi(), device.getTimestamp(), latValue, lonValue);
                     return bleDevice;
                 }
             }
