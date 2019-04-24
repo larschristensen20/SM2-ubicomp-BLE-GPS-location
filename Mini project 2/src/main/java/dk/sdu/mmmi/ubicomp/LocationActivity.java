@@ -8,7 +8,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -18,6 +20,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
 
+import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeSet;
@@ -69,6 +72,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         mMap = googleMap;
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.setMyLocationEnabled(true);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
     }
 
     @Override
@@ -115,11 +119,12 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     };
 
     private void manageDeviceList() {
-        long currentTime = System.currentTimeMillis() * 1000;
+        long currentTime = System.currentTimeMillis();
 
-        for (BLEDevice device : deviceList) {
-            if (currentTime - device.getDiscovered() > 30) {
-                deviceList.remove(device);
+        for (Iterator<BLEDevice> it = deviceList.iterator(); it.hasNext();) {
+            BLEDevice device = it.next();
+            if (currentTime - device.getDiscovered() > 30*1000) {
+                it.remove();
             }
         }
 
@@ -133,6 +138,9 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     private void disableGPSLocationAndPlaceMarker(LatLng position, String title) {
         mMap.setMyLocationEnabled(false);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
+        if(marker != null) {
+            marker.remove();
+        }
 
         marker = mMap.addMarker(new MarkerOptions().position(position).title(title));
     }

@@ -57,7 +57,11 @@ public class BLEDevice implements Comparable<BLEDevice> {
         return "BLEDevice{" +
                 "alias='" + alias + '\'' +
                 ", roomName='" + roomName + '\'' +
+                ", level='" + level + '\'' +
                 ", signalStrength=" + signalStrength +
+                ", discovered=" + discovered +
+                ", lat=" + lat +
+                ", lon=" + lon +
                 '}';
     }
 }
